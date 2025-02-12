@@ -1,6 +1,6 @@
 {
   "name": "vintasend-winston",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jsonwebtoken": "^9.0.2",
-    "vintasend": "^0.1.0",
+    "vintasend": "^0.1.1",
     "winston": "^3.17.0"
   }
 }
