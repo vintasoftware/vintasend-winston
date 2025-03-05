@@ -1,4 +1,4 @@
-import type { BaseLogger } from 'vintasend/src/services/loggers/base-logger';
+import type { BaseLogger } from 'vintasend/dist/services/loggers/base-logger';
 
 import * as winston from 'winston';
 
