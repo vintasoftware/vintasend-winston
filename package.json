@@ -2,15 +2,22 @@
   "name": "vintasend-winston",
   "version": "0.1.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "author": "Hugo Bessa",
+  "license": "MIT",
   "dependencies": {
     "jsonwebtoken": "^9.0.2",
     "vintasend": "^0.1.4",
     "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
   }
 }
