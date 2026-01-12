@@ -1,6 +1,6 @@
 {
   "name": "vintasend-winston",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -16,9 +16,9 @@
   "author": "Hugo Bessa",
   "license": "MIT",
   "dependencies": {
-    "jsonwebtoken": "^9.0.2",
-    "vintasend": "^0.2.3",
-    "winston": "^3.17.0"
+    "jsonwebtoken": "^9.0.3",
+    "vintasend": "^0.3.0",
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
