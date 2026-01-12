@@ -9,9 +9,11 @@ export class WinstonLogger implements BaseLogger {
     this.logger = winston.createLogger(winstonOptions || {});
 
     if (process.env.NODE_ENV === 'development') {
-      this.logger.add(new winston.transports.Console({
-        format: winston.format.simple(),
-      }));
+      this.logger.add(
+        new winston.transports.Console({
+          format: winston.format.simple(),
+        }),
+      );
     }
   }
 

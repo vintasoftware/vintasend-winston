@@ -1,6 +1,5 @@
-import { WinstonLogger } from '../index';
 import * as winston from 'winston';
-
+import { WinstonLogger } from '../index';
 
 jest.mock('winston', () => ({
   createLogger: jest.fn(),
@@ -13,7 +12,7 @@ jest.mock('winston', () => ({
 }));
 
 describe('WinstonLogger', () => {
-  let mockLogger: { info: jest.Mock; error: jest.Mock; warn: jest.Mock, add: jest.Mock };
+  let mockLogger: { info: jest.Mock; error: jest.Mock; warn: jest.Mock; add: jest.Mock };
   let winstonLogger: WinstonLogger;
 
   beforeEach(() => {
