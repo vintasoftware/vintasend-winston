@@ -1,33 +1,34 @@
 import * as winston from 'winston';
 import { WinstonLogger } from '../index';
+import { vi, type Mock } from 'vitest';
 
-jest.mock('winston', () => ({
-  createLogger: jest.fn(),
+vi.mock('winston', () => ({
+  createLogger: vi.fn(),
   transports: {
-    Console: jest.fn(),
+    Console: vi.fn(),
   },
   format: {
-    simple: jest.fn(),
+    simple: vi.fn(),
   },
 }));
 
 describe('WinstonLogger', () => {
-  let mockLogger: { info: jest.Mock; error: jest.Mock; warn: jest.Mock; add: jest.Mock };
+  let mockLogger: { info: Mock; error: Mock; warn: Mock; add: Mock };
   let winstonLogger: WinstonLogger;
 
   beforeEach(() => {
     mockLogger = {
-      info: jest.fn(),
-      error: jest.fn(),
-      warn: jest.fn(),
-      add: jest.fn(),
+      info: vi.fn(),
+      error: vi.fn(),
+      warn: vi.fn(),
+      add: vi.fn(),
     };
-    (winston.createLogger as jest.Mock).mockReturnValue(mockLogger);
+    (winston.createLogger as Mock).mockReturnValue(mockLogger);
     winstonLogger = new WinstonLogger();
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should initialize with default options', () => {
