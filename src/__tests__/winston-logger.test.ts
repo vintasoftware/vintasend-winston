@@ -1,6 +1,6 @@
+import { type Mock, vi } from 'vitest';
 import * as winston from 'winston';
 import { WinstonLogger } from '../index';
-import { vi, type Mock } from 'vitest';
 
 vi.mock('winston', () => ({
   createLogger: vi.fn(),
