@@ -1,6 +1,6 @@
 {
   "name": "vintasend-winston",
-  "version": "0.11.2-alpha7",
+  "version": "0.11.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "jsonwebtoken": "^9.0.3",
-    "vintasend": "^0.11.2-alpha7",
+    "vintasend": "^0.11.2",
     "winston": "^3.19.0"
   },
   "devDependencies": {
