@@ -1,4 +1,4 @@
-import { type Mock, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
 import * as winston from 'winston';
 import { WinstonLogger } from '../index';
 
