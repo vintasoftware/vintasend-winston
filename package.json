@@ -1,6 +1,6 @@
 {
   "name": "vintasend-winston",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
@@ -21,11 +21,12 @@
   "license": "MIT",
   "dependencies": {
     "jsonwebtoken": "^9.0.3",
-    "vintasend": "^0.13.1",
+    "vintasend": "^0.13.2",
     "winston": "^3.19.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.5",
+    "@types/node": "25.3.3",
     "@vitest/coverage-v8": "4.0.18",
     "husky": "^9.1.7",
     "typescript": "^5.9.3",
