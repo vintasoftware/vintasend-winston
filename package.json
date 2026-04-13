@@ -1,6 +1,6 @@
 {
   "name": "vintasend-winston",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "jsonwebtoken": "^9.0.3",
-    "vintasend": "^0.14.0",
+    "vintasend": "^0.14.1",
     "winston": "^3.19.0"
   },
   "devDependencies": {
