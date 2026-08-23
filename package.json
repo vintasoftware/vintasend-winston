@@ -1,6 +1,6 @@
 {
   "name": "vintasend-winston",
-  "version": "1.0.0-alpha1",
+  "version": "1.0.0-alpha2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vintasoftware/vintasend-winston.git"
@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "jsonwebtoken": "^9.0.3",
-    "vintasend": "^1.0.0-alpha1",
+    "vintasend": "^1.0.0-alpha2",
     "winston": "^3.19.0"
   },
   "devDependencies": {
