@@ -1,4 +1,5 @@
-import type { BaseLogger } from 'vintasend';
+import type { BaseLogger, LogMessage } from 'vintasend';
+import { renderLogMessage } from 'vintasend';
 
 import * as winston from 'winston';
 
@@ -17,15 +18,15 @@ export class WinstonLogger implements BaseLogger {
     }
   }
 
-  info(message: string): void {
-    this.logger.info(message);
+  info(message: LogMessage): void {
+    this.logger.info(renderLogMessage(message));
   }
 
-  error(message: string): void {
-    this.logger.error(message);
+  error(message: LogMessage): void {
+    this.logger.error(renderLogMessage(message));
   }
 
-  warn(message: string): void {
-    this.logger.warn(message);
+  warn(message: LogMessage): void {
+    this.logger.warn(renderLogMessage(message));
   }
 }

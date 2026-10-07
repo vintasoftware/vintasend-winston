@@ -1,3 +1,4 @@
+import { log, logError, logId, logLabel } from 'vintasend';
 import { afterEach, beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
 import * as winston from 'winston';
 import { WinstonLogger } from '../index';
@@ -55,20 +56,33 @@ describe('WinstonLogger', () => {
   });
 
   it('should log info messages', () => {
-    const message = 'test info message';
-    winstonLogger.info(message);
-    expect(mockLogger.info).toHaveBeenCalledWith(message);
+    winstonLogger.info(log`Sent notification ${logId('123')} via ${logLabel('sendgrid')}`);
+    expect(mockLogger.info).toHaveBeenCalledWith('Sent notification 123 via sendgrid');
   });
 
   it('should log error messages', () => {
-    const message = 'test error message';
-    winstonLogger.error(message);
-    expect(mockLogger.error).toHaveBeenCalledWith(message);
+    winstonLogger.error(log`Failed to send notification ${logId('123')}`);
+    expect(mockLogger.error).toHaveBeenCalledWith('Failed to send notification 123');
   });
 
   it('should log warning messages', () => {
-    const message = 'test warning message';
-    winstonLogger.warn(message);
-    expect(mockLogger.warn).toHaveBeenCalledWith(message);
+    winstonLogger.warn(log`Retrying notification ${logId('123')}`);
+    expect(mockLogger.warn).toHaveBeenCalledWith('Retrying notification 123');
+  });
+
+  it('should not write error messages to winston', () => {
+    const error = Object.assign(
+      new Error('Could not deliver to Jane Synthetic <jane.synthetic@example.com>'),
+      { status: 400 },
+    );
+
+    winstonLogger.error(log`Failed to send notification ${logId('123')}: ${logError(error)}`);
+
+    expect(mockLogger.error).toHaveBeenCalledWith(
+      'Failed to send notification 123: Error (status 400)',
+    );
+    const written = JSON.stringify(mockLogger.error.mock.calls);
+    expect(written).not.toContain('Jane Synthetic');
+    expect(written).not.toContain('jane.synthetic@example.com');
   });
 });
