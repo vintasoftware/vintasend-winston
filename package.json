@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "jsonwebtoken": "^9.0.3",
-    "vintasend": "^1.0.0-alpha9",
+    "vintasend": "1.0.0-alpha10",
     "winston": "^3.19.0"
   },
   "devDependencies": {
